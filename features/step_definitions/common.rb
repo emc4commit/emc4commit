@@ -33,7 +33,7 @@ def mock_github_user nickname
     },
   }.to_ostruct
 
-  step "a developer named \"#{nickname}\" exists without a bitcoin address"
+  step "a developer named \"#{nickname}\" exists without a emercoin address"
 end
 
 Given /^a GitHub user named "(.*?)" exists$/ do |nickname|

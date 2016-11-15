@@ -53,17 +53,17 @@ class Tip < ActiveRecord::Base
 
   scope :unclaimed,     -> { joins(:user).
                              unpaid.
-                             where('users.bitcoin_address' => ['', nil]) }
+                             where('users.emercoin_address' => ['', nil]) }
   def claimed?
-    paid? || user.bitcoin_address.present?
+    paid? || user.emercoin_address.present?
   end
   def unclaimed?
     !claimed?
   end
 
-  scope :with_address,  -> { joins(:user).where.not('users.bitcoin_address' => ['', nil]) }
+  scope :with_address,  -> { joins(:user).where.not('users.emercoin_address' => ['', nil]) }
   def with_address?
-    user.bitcoin_address.present?
+    user.emercoin_address.present?
   end
 
   scope :decided,       -> { where.not(amount: nil) }
@@ -112,7 +112,7 @@ class Tip < ActiveRecord::Base
   end
 
   def notify_user
-    if amount && amount > 0 && user.bitcoin_address.blank? &&
+    if amount && amount > 0 && user.emercoin_address.blank? &&
         !user.unsubscribed && !project.disable_notifications &&
         user.balance > 21000000*1e8
       if user.notified_at.nil? or user.notified_at < 30.days.ago

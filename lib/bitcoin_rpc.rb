@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-class BitcoinRPC
+class EmercoinRPC
 
   def initialize(service_url, batch_mode=false)
     @service_url = service_url

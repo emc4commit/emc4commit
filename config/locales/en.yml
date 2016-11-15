@@ -1,8 +1,8 @@
 en:
-  tip4commit: Tip4Commit
+  emc4commit: emc4Commit
   meta:
     title: Contribute to Open Source
-    description: Donate bitcoins to open source projects or make commits and get tips for it.
+    description: Donate emercoins to open source projects or make commits and get tips for it.
   menu:
     home: Home
     projects: Supported Projects
@@ -10,7 +10,7 @@ en:
     text: "Source code is available at %{github_link} and you can also %{support_link} its development."
     github_link: GitHub
     support_link: support
-    follow_link: Follow @tip4commit
+    follow_link: Follow @emc4commit
   links:
     sign_up: Sign up
     sign_in: Sign in
@@ -22,14 +22,14 @@ en:
     opt_in_notice: "Due to complaints from project maintainers we don't add projects automatically anymore. Existing projects without deposits have been removed.  If you want to add your project, please %{create_issue_link}."
     access_denied: Access denied
     can_assign_more_tips: "You can't assign more than 100% of available funds."
-    wrong_bitcoin_address: Error updating bitcoin address
+    wrong_emercoin_address: Error updating emercoin address
     user_not_found: User not found
     access_denied: You are not authorized to perform this action!
   notices:
     project_updated: The project settings have been updated
     tips_decided: The tip amounts have been defined
     user_updated: Your information saved!
-    user_unsubscribed: "You unsubscribed! Sorry for bothering you. Although, you still can leave us your bitcoin address to get your tips."
+    user_unsubscribed: "You unsubscribed! Sorry for bothering you. Although, you still can leave us your emercoin address to get your tips."
   tip_amounts:
     undecided: "Undecided"
     free: "Free: 0%"
@@ -56,11 +56,11 @@ en:
       see_projects: See projects
       how_does_it_work:
         title: How does it work?
-        text: People donate bitcoins to projects. When someone's commit is accepted into the project repository, we automatically tip the author.
-        button: Learn about Bitcoin
+        text: People donate emercoins to projects. When someone's commit is accepted into the project repository, we automatically tip the author.
+        button: Learn about Emercoin
       donate:
         title: Donate
-        text: Find a project you like and deposit bitcoins into it. Your donation will be accumulated with the funds of other donators to give as tips for new commits.
+        text: Find a project you like and deposit emercoins into it. Your donation will be accumulated with the funds of other donators to give as tips for new commits.
         button: Find or add a project
       contribute:
         title: Contribute
@@ -105,10 +105,10 @@ en:
       when_decided: when its amount is decided
       next_tip: Next Tip
       contribute_and_earn: Contribute and Earn
-      contribute_and_earn_description: "Donate bitcoins to this project or %{make_commits_link} and get tips for it. If your commit is accepted %{branch} by a project maintainer and there are bitcoins on its balance, you will get a tip!"
+      contribute_and_earn_description: "Donate emercoins to this project or %{make_commits_link} and get tips for it. If your commit is accepted %{branch} by a project maintainer and there are emercoins on its balance, you will get a tip!"
       contribute_and_earn_branch: "to <strong>%{branch}</strong> branch"
       make_commits_link: make commits
-      tell_us_bitcoin_address: "Just %{tell_us_link} your bitcoin address."
+      tell_us_emercoin_address: "Just %{tell_us_link} your emercoin address."
       tell_us_link: tell us
       sign_in: "Just check your email or %{sign_in_link}."
       promote_project: Promote %{project}
@@ -144,7 +144,7 @@ en:
       amount: Amount
       refunded: Refunded to project's deposit
       undecided: The amount of the tip has not been decided yet
-      no_bitcoin_address: User didn't specify withdrawal address
+      no_emercoin_address: User didn't specify withdrawal address
       below_threshold: "User's balance is below withdrawal threshold"
       waiting: Waiting for withdrawal
       error: (error sending transaction)
@@ -170,7 +170,7 @@ en:
       threshold: "You will get your money when your balance hits the threshold of %{threshold}"
       see_all: see all
       received: "%{time} received %{amount} for commit %{commit} in %{project}"
-      bitcoin_address_placeholder: Your bitcoin address
+      emercoin_address_placeholder: Your emercoin address
       notify: Notify me about new tips (no more than one email per month)
       submit_user: Update user info
       change_password: Change your password
@@ -218,7 +218,7 @@ en:
     attributes:
       user:
         email: E-mail
-        bitcoin_address: Bitcoin address
+        emercoin_address: Emercoin address
         password: Password
         password_confirmation: Password confirmation
         display_name: Display name

@@ -25,24 +25,24 @@ describe User do
     end
   end
 
-  describe 'bitcoin_address' do
+  describe 'emercoin_address' do
     context 'when address is blank' do
       it 'should be valid' do
-        user.bitcoin_address = ''
+        user.emercoin_address = ''
         expect(user).to be_valid
       end
     end
 
     context 'when address is valid' do
       it 'should be valid' do
-        user.bitcoin_address = '1M4bS4gPyA6Kb8w7aXsgth9oUZWcRk73tQ'
+        user.emercoin_address = '1M4bS4gPyA6Kb8w7aXsgth9oUZWcRk73tQ'
         expect(user).to be_valid
       end
     end
 
     context 'when address is not valid' do
       it 'should not be valid' do
-        user.bitcoin_address = '1M4bS4gPyA6Kb8w7aXsgth9oUZXXXXXXXX'
+        user.emercoin_address = '1M4bS4gPyA6Kb8w7aXsgth9oUZXXXXXXXX'
         expect(user).not_to be_valid
       end
     end

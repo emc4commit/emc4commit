@@ -21,16 +21,16 @@ class Project < ActiveRecord::Base
 
   # before_save :check_tips_to_pay_against_avaiable_amount
 
-  def update_bitcoin_address
+  def update_emercoin_address
     blockchain_uri       = URI CONFIG["blockchain_info"]["new_url"]
     blockchain_pass      = CONFIG["blockchain_info"]["password"]
-    blockchain_label     = "#{self.full_name}@tip4commit"
+    blockchain_label     = "#{self.full_name}@emc4commit"
     blockchain_params    = { password: blockchain_pass, label: blockchain_label }
     blockchain_uri.query = URI.encode_www_form blockchain_params
     blockchain_resp      = Net::HTTP.get_response blockchain_uri
     if blockchain_resp.is_a? Net::HTTPSuccess
-      self.bitcoin_address = (JSON.parse blockchain_resp.body)["address"]
-      self.save! unless self.bitcoin_address.nil?
+      self.emercoin_address = (JSON.parse blockchain_resp.body)["address"]
+      self.save! unless self.emercoin_address.nil?
     end
   end
 
@@ -247,8 +247,8 @@ class Project < ActiveRecord::Base
   end
 
   def archive_address!
-    if self.bitcoin_address.present?
-      uri = URI("https://blockchain.info/merchant/#{CONFIG["blockchain_info"]["guid"]}/archive_address?password=#{CONFIG["blockchain_info"]["password"]}&address=#{self.bitcoin_address}")
+    if self.emercoin_address.present?
+      uri = URI("https://blockchain.info/merchant/#{CONFIG["blockchain_info"]["guid"]}/archive_address?password=#{CONFIG["blockchain_info"]["password"]}&address=#{self.emercoin_address}")
       return Net::HTTP.get_response(uri)
     else
       return nil
@@ -256,8 +256,8 @@ class Project < ActiveRecord::Base
   end
 
   def unarchive_address!
-    if self.bitcoin_address.present?
-      uri = URI("https://blockchain.info/merchant/#{CONFIG["blockchain_info"]["guid"]}/unarchive_address?password=#{CONFIG["blockchain_info"]["password"]}&address=#{self.bitcoin_address}")
+    if self.emercoin_address.present?
+      uri = URI("https://blockchain.info/merchant/#{CONFIG["blockchain_info"]["guid"]}/unarchive_address?password=#{CONFIG["blockchain_info"]["password"]}&address=#{self.emercoin_address}")
       return Net::HTTP.get_response(uri)
     else
       return nil
@@ -268,6 +268,6 @@ class Project < ActiveRecord::Base
   def generate_address2
     new_address = Wallet.generate_address_and_register_callback
     Rails.logger.info "Generated: #{new_address.inspect}"
-    self.update bitcoin_address2: new_address['address']
+    self.update emercoin_address2: new_address['address']
   end
 end

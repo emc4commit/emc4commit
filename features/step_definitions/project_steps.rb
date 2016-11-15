@@ -11,7 +11,7 @@ def create_github_project project_name , is_mock_project = true
   # NOTE: when is_mock_project is false the app will actually fetch via network
   #       this is the old "find or create" GUI functionality
   #           so obviously the actual repo must exist
-  #       projects created in this way will not have a bitcoin_address
+  #       projects created in this way will not have a emercoin_address
   #           but will have valid data such as: github_id , avatar_url ,
   #           source_full_name , description , watchers_count , language
   #       up to three of each host are cached with a reference to the most recent
@@ -26,7 +26,7 @@ def create_github_project project_name , is_mock_project = true
   if is_mock_project
     new_project = Project.create! :full_name       => project_name , # e.g. "me/my-project"
                                   :github_id       => Digest::SHA1.hexdigest(project_name) ,
-                                  :bitcoin_address => 'mq4NtnmQoQoPfNWEPbhSvxvncgtGo6L8WY'
+                                  :emercoin_address => 'mq4NtnmQoQoPfNWEPbhSvxvncgtGo6L8WY'
   else
     new_project = Project.find_or_create_by_url project_name # e.g. "me/my-project"
   end
@@ -91,7 +91,7 @@ When /^the project syncs with the remote repo$/ do
   # in the real world a project has no information regarding commits
   #     nor collaborators until the worker thread initially fetches the repo
   #     so we cache new_commits and collaborators and defer loading to this step
-  #     which is intended to simulate the BitcoinTipper::work method
+  #     which is intended to simulate the EmercoinTipper::work method
   project_owner_name = (@current_project.full_name.split '/').first
   @new_commits     ||= {@current_project.id => Hash.new}
   @collaborators   ||= [project_owner_name]

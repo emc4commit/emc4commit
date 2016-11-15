@@ -16,7 +16,7 @@ describe UserMailer do
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eq ['no-reply@tip4commit.com']
+      expect(mail.from).to eq ['no-reply@emc4commit.com']
     end
 
     it 'assigns user\'s display_name' do
@@ -24,7 +24,7 @@ describe UserMailer do
     end
 
     it 'assigns users\' balance' do
-      expect(mail.body.encoded).to match("Please, log in and tell us your bitcoin address to get it.</p>\r\n<p>Your current balance is <nobr>0.00000010 Ƀ</nobr>")
+      expect(mail.body.encoded).to match("Please, log in and tell us your emercoin address to get it.</p>\r\n<p>Your current balance is <nobr>0.00000010 Ƀ</nobr>")
     end
 
     it 'useses secure protocol for links' do

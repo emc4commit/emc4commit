@@ -1,7 +1,7 @@
 Feature: Developers may sign-up to receive tip offers
   Background:
     Given a "github" project named "seldon/seldons-project" exists
-    And   a developer named "yugo" exists with a bitcoin address
+    And   a developer named "yugo" exists with a emercoin address
     And   our fee is "0"
     And   a deposit of "500" is made
     And   the most recent commit is "AAA"

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to @user, notice: I18n.t('notices.user_updated')
     else
       show
-      render :show, alert: I18n.t('errors.wrong_bitcoin_address')
+      render :show, alert: I18n.t('errors.wrong_emercoin_address')
     end
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:bitcoin_address, :password, :password_confirmation, :unsubscribed, :display_name, :denom)
+    params.require(:user).permit(:emercoin_address, :password, :password_confirmation, :unsubscribed, :display_name, :denom)
   end
 
   def load_user ; super params ; end ;

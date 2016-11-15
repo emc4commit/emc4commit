@@ -152,7 +152,7 @@ module ApplicationHelper
 
   def get_rate(currency)
     Rails.cache.fetch("###" + currency, :expires_in => 24.hours) do
-      uri = URI('https://api.bitcoinaverage.com/ticker/' + currency + '/')
+      uri = URI('https://api.emercoinaverage.com/ticker/' + currency + '/')
       response = Net::HTTP.get_response(uri)
       hash = JSON.parse(response.body)
       hash["24h_avg"]

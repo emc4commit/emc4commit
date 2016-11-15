@@ -20,7 +20,7 @@ class HomeController < ApplicationController
       return
     end
 
-    if project = Project.find_by(bitcoin_address: params[:input_address])
+    if project = Project.find_by(emercoin_address: params[:input_address])
       deposit = project.deposits.find_by(txid: params[:transaction_hash])
     else
       deposit = nil
@@ -66,7 +66,7 @@ class HomeController < ApplicationController
       return
     end
 
-    if project = Project.find_by(bitcoin_address2: params[:address])
+    if project = Project.find_by(emercoin_address2: params[:address])
       deposit = project.deposits.find_by(txid: params[:transaction_hash])
     else
       deposit = nil

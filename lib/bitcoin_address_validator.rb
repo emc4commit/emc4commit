@@ -1,9 +1,9 @@
 require 'digest'
 
-class BitcoinAddressValidator < ActiveModel::EachValidator
+class EmercoinAddressValidator < ActiveModel::EachValidator
   def validate_each(record, field, value)
-    unless value.blank? || valid_bitcoin_address?(value)
-      record.errors[field] << "Bitcoin address is invalid"
+    unless value.blank? || valid_emercoin_address?(value)
+      record.errors[field] << "Emercoin address is invalid"
     end
   end
 
@@ -12,7 +12,7 @@ class BitcoinAddressValidator < ActiveModel::EachValidator
   B58Chars = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
   B58Base = B58Chars.length
 
-  def valid_bitcoin_address?(address)
+  def valid_emercoin_address?(address)
     if (address =~ /^[a-zA-Z1-9]{33,35}$/) and version = version(address)
       if (expected_versions = CONFIG["address_versions"]).present?
         expected_versions.include?(version.ord)

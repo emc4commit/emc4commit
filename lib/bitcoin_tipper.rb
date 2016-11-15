@@ -1,4 +1,4 @@
-class BitcoinTipper
+class EmercoinTipper
   def self.work_forever
     while true do
       self.work
@@ -63,7 +63,7 @@ class BitcoinTipper
         if user.ready_for_withdrawal?
           user.tips.decided.unpaid.each do |tip|
             tip.update_attribute :sendmany_id, sendmany.id
-            outs[user.bitcoin_address] = outs[user.bitcoin_address].to_i + tip.amount
+            outs[user.emercoin_address] = outs[user.emercoin_address].to_i + tip.amount
           end
         end
       end

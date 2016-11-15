@@ -1,5 +1,5 @@
-class AddBitcoinAddressToUsers < ActiveRecord::Migration
+class AddEmercoinAddressToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :bitcoin_address, :string
+    add_column :users, :emercoin_address, :string
   end
 end

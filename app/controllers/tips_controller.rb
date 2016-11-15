@@ -6,7 +6,7 @@ class TipsController < ApplicationController
     if @project.present?
       @tips = @project.tips.includes(:user).with_address
     elsif @user.present?
-      if @user.bitcoin_address.present?
+      if @user.emercoin_address.present?
         @tips = @user.tips.includes(:project)
       else
         flash[:error] = I18n.t('errors.user_not_found')

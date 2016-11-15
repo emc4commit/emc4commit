@@ -11,11 +11,11 @@ class Sendmany < ActiveRecord::Base
     update_attribute :is_error, true # it's a lock to prevent duplicates
 
 
-    bitcoind = BitcoinRPC.new(CONFIG["bitcoind"]["rpc_connection_string"],false)
+    emercoind = EmercoinRPC.new(CONFIG["emercoind"]["rpc_connection_string"],false)
 
     begin
-      txid = bitcoind.sendmany(
-        CONFIG["bitcoind"]["account"],
+      txid = emercoind.sendmany(
+        CONFIG["emercoind"]["account"],
         JSON.parse(data).map { |address, amount| {address => amount/1e8} }.inject(&:merge)
       )
       if txid.present?

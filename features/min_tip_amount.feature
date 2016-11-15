@@ -6,7 +6,7 @@ Feature: Admins can set minimum tip amount in the configuration file
     And   a deposit of "500" is made
 
   Scenario: Developer gets minimum tip or the remaining available_amount
-    Given a developer named "yugo" exists with a bitcoin address
+    Given a developer named "yugo" exists with a emercoin address
     And   a new commit "COMMIT1" is made by a developer named "yugo"
     And   a new commit "COMMIT2" is made by a developer named "yugo"
     And   a new commit "COMMIT3" is made by a developer named "yugo"

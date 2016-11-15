@@ -1,7 +1,7 @@
 Feature: Visitors should be able to sign_up and sign_in
   Background:
     Given a "github" project named "seldon/seldons-project" exists
-    And   a developer named "seldon" exists without a bitcoin address
+    And   a developer named "seldon" exists without a emercoin address
 
 
   Scenario Outline: Visitors should see sign_up and sign_in links on all pages

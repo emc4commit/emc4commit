@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151219081507) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "url",                    limit: 255
-    t.string   "bitcoin_address",        limit: 255
+    t.string   "emercoin_address",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name",                   limit: 255
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20151219081507) do
     t.boolean  "disable_notifications"
     t.string   "avatar_url",             limit: 255
     t.datetime "deleted_at"
-    t.string   "bitcoin_address2"
+    t.string   "emercoin_address2"
   end
 
   add_index "projects", ["full_name"], name: "index_projects_on_full_name", unique: true
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20151219081507) do
     t.string   "nickname",               limit: 255
     t.string   "name",                   limit: 255
     t.string   "image",                  limit: 255
-    t.string   "bitcoin_address",        limit: 255
+    t.string   "emercoin_address",        limit: 255
     t.string   "login_token",            limit: 255
     t.boolean  "unsubscribed"
     t.datetime "notified_at"

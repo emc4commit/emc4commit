@@ -5,7 +5,7 @@
   = btc_human @user.balance
   = form_for(@user) do |f|
     = f.select :denom,
-        options_for_select([["BTC", "0"], ["mBTC", "1"], ["μBTC", "2"], ["Satoshi", "3"], ["USD", "4"], ["EUR", "5"], ["AUD", "6"], ["BRL", "7"], ["CAD", "8"], ["CNY", "9"], ["GBP", "10"], ["IDR", "11"], ["ILS", "12"], ["JPY", "13"], ["MXN", "14"], ["NOK", "15"], ["NZD", "16"], ["PLN", "17"], ["RON", "18"], ["RUB", "19"], ["SEK", "20"], ["SGD", "21"], ["ZAR", "22"]], selected: @user.denom)
+        options_for_select([["EMC", "0"], ["mEMC", "1"], ["μEMC", "2"], ["Satoshi", "3"], ["USD", "4"], ["EUR", "5"], ["AUD", "6"], ["BRL", "7"], ["CAD", "8"], ["CNY", "9"], ["GBP", "10"], ["IDR", "11"], ["ILS", "12"], ["JPY", "13"], ["MXN", "14"], ["NOK", "15"], ["NZD", "16"], ["PLN", "17"], ["RON", "18"], ["RUB", "19"], ["SEK", "20"], ["SGD", "21"], ["ZAR", "22"]], selected: @user.denom)
     = f.submit "save"
 %p
   %small= raw t('.threshold', threshold: btc_human(CONFIG["min_payout"]))
@@ -24,15 +24,15 @@
   %strong= User.human_attribute_name(:email)
 %p= @user.email
 = twitter_bootstrap_form_for @user do |f|
-  = f.text_field :bitcoin_address, placeholder: t('.bitcoin_address_placeholder')
-  - if @user.gravatar_bitcoin.present?
-    %span.from-gravatar{data:{for: 'user[bitcoin_address]', value: @user.gravatar_bitcoin }}
-      = "#{t('.use_from_gravatar')}: #{@user.gravatar_bitcoin}"
+  = f.text_field :emercoin_address, placeholder: t('.emercoin_address_placeholder')
+  - if @user.gravatar_emercoin.present?
+    %span.from-gravatar{data:{for: 'user[emercoin_address]', value: @user.gravatar_emercoin }}
+      = "#{t('.use_from_gravatar')}: #{@user.gravatar_emercoin}"
   = f.text_field :display_name
   - if @user.gravatar_display_name.present?
     %span.from-gravatar{data:{for: 'user[display_name]', value: @user.gravatar_display_name }}
       = "#{t('.use_from_gravatar')}: #{@user.gravatar_display_name}"
-  - if f.object.bitcoin_address.blank?
+  - if f.object.emercoin_address.blank?
     = f.check_box :unsubscribed, t('.notify'), { checked: !f.object.unsubscribed? }, '0', '1'
   %br
   = f.submit t('.submit_user')

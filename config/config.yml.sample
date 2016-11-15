@@ -1,4 +1,4 @@
-app_host: 'tip4commit.com'
+app_host: 'emc4commit.coin.emergate.net'
 
 github:
   key: "111111111111"
@@ -8,17 +8,12 @@ github:
   project_pages:
     "torvalds/linux": 30
 
-blockchain_info:
-  guid: "111111111111"
-  password: "111111111111"
-  callback_secret: "111111111111"
-  # api_key for https://alpha.blockchain.info/
-  api_key: "111111111111"
-  callback_secret2: "111111111111"
-
-bitcoind:
-  rpc_connection_string: https://user:password@rpc.blockchain.info:443
-  account: 1M4bS4gPyA6Kb8w7aXsgth9oUZWcRk73tQ
+daemon:
+  username: rpcuser
+  password: rpcpassword
+  host: localhost
+  port: 6662
+  path: /usr/bin/emercoind
 
 wallet:
   xpub: xpub11111111111111
@@ -42,15 +37,15 @@ smtp_settings:
 
 # airbrake:
 #   api_key: 111111111111
-#   host: errbit.tip4commit.com
+#   host: errbit.emc4commit.com
 
 tip: 0.01
 min_payout: 100000
 our_fee: 0.01
 min_tip: 50000 # optional
 
-deposit_address: 1M4bS4gPyA6Kb8w7aXsgth9oUZWcRk73tQ
+deposit_address: EYpqLeE8iJbMz5xcKkQSXdVdYm3fCj4KEK
 
-address_versions: # 0/5 for bitcoin addresses, 111/196 for testnet, see chainparams.cpp
-  - 0
-  - 5
+address_versions: # see chainparams.cpp
+  - 33
+  - 111

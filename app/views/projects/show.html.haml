@@ -24,8 +24,8 @@
         %h4.panel-title= t('projects.index.support')
       .panel-body
         %p
-          %pre= @project.bitcoin_address
-          .qrcode.centered{data: {qrcode: "bitcoin:#{@project.bitcoin_address}"}}
+          %pre= @project.emercoin_address
+          .qrcode.centered{data: {qrcode: "emercoin:#{@project.emercoin_address}"}}
         %p
           = t('.fee', percentage: number_to_percentage(100-CONFIG["our_fee"]*100, precision: 0))
     .alert.alert-warning
@@ -103,8 +103,8 @@
     = raw t('.contribute_and_earn_description', make_commits_link: link_to(t('.make_commits_link'), @project.github_url, target: '_blank'), branch: @project.branch.present? ? t('.contribute_and_earn_branch', branch: @project.branch) : '')
 
     - if current_user
-      - if current_user.bitcoin_address.blank?
-        = raw t('.tell_us_bitcoin_address', tell_us_link: link_to(t('.tell_us_link'), current_user))
+      - if current_user.emercoin_address.blank?
+        = raw t('.tell_us_emercoin_address', tell_us_link: link_to(t('.tell_us_link'), current_user))
     - else
       = raw t('.sign_in', sign_in_link: link_to(t('links.sign_in_imp'), new_user_session_path))
 
@@ -122,7 +122,7 @@
       / AddThis Button END
 
     %h4= t('.embedding')
-    %p= link_to image_tag(shield_url(@project), alt: t('tip4commit')), pretty_project_url(@project)
+    %p= link_to image_tag(shield_url(@project), alt: t('emc4commit')), pretty_project_url(@project)
     %form.form-horizontal
       %div.form-group
         %label.control-label.col-sm-2{for: 'image_url'}= t('.image_url')

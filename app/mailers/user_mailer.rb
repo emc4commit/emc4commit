@@ -8,9 +8,9 @@ class UserMailer < ActionMailer::Base
     mail to: user.email, subject: "You received a tip for your commit"
   end
 
-  def check_bitcoin_address user
+  def check_emercoin_address user
     @user = user
 
-    mail to: user.email, subject: "Check your Bitcoin address"
+    mail to: user.email, subject: "Check your Emercoin address"
   end
 end

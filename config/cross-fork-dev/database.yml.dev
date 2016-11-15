@@ -6,7 +6,7 @@ development:
 <% if    IS_MY_FORK %>
   database: db/my_development.sqlite3
 <% elsif IS_TIP4COMMIT_FORK   %>
-  database: db/tip4commit_development.sqlite3
+  database: db/emc4commit_development.sqlite3
 <% elsif IS_PEER4COMMIT_FORK  %>
   database: db/peer4commit_development.sqlite3
 <% elsif IS_PRIME4COMMIT_FORK %>
@@ -25,7 +25,7 @@ test:
 <% if    IS_MY_FORK %>
   database: db/my_test.sqlite3
 <% elsif IS_TIP4COMMIT_FORK   %>
-  database: db/tip4commit_test.sqlite3
+  database: db/emc4commit_test.sqlite3
 <% elsif IS_PEER4COMMIT_FORK  %>
   database: db/peer4commit_test.sqlite3
 <% elsif IS_PRIME4COMMIT_FORK %>
@@ -39,7 +39,7 @@ test:
 production:
   adapter:  mysql2
   encoding: utf8
-  database: tip4commit
+  database: emc4commit
   username: root
   password:
   socket:   /var/run/mysqld/mysqld.sock

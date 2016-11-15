@@ -1,8 +1,8 @@
 Feature: The site routes pretty paths uniformly
   Background:
     Given a "github" project named "seldon/seldons-project" exists
-    And   a developer named "seldon" exists with a bitcoin address
-    And   a developer named "yugo" exists without a bitcoin address
+    And   a developer named "seldon" exists with a emercoin address
+    And   a developer named "yugo" exists without a emercoin address
 
 
   ### Project routes ###
@@ -134,7 +134,7 @@ Feature: The site routes pretty paths uniformly
     Then  I should be on the "seldon user" page
     And   I should see "seldon Balance 0.00000000 Ƀ"
     And   I should see "E-mail seldon@example.com"
-    And   I should see "Bitcoin address"
+    And   I should see "Emercoin address"
 
   Scenario: User show page is accessible via nickname to that user
     Given I'm signed in as "seldon"
@@ -142,7 +142,7 @@ Feature: The site routes pretty paths uniformly
     Then  I should be on the "seldon user" page
     And   I should see "seldon Balance 0.00000000 Ƀ"
     And   I should see "E-mail seldon@example.com"
-    And   I should see "Bitcoin address"
+    And   I should see "Emercoin address"
 
   Scenario: Unknown user tips page user name redirects to users page
     When  I visit the "unknown-user user tips" page
@@ -154,22 +154,22 @@ Feature: The site routes pretty paths uniformly
     Then  I should be on the "users" page
     And   I should see "User not found"
 
-  Scenario: User without bitcoin address tips page via user name redirects to users page
+  Scenario: User without emercoin address tips page via user name redirects to users page
     When  I visit the "yugo user tips" page
     Then  I should be on the "users" page
     And   I should see "User not found"
 
-  Scenario: User without bitcoin address tips page via user id redirects to users page
+  Scenario: User without emercoin address tips page via user id redirects to users page
     When  I browse to the explicit path "users/2/tips"
     Then  I should be on the "users" page
     And   I should see "User not found"
 
-  Scenario: User with bitcoin address tips page is accessible via user name
+  Scenario: User with emercoin address tips page is accessible via user name
     When  I visit the "seldon user tips" page
     Then  I should be on the "seldon user tips" page
     And   I should see "seldon tips"
 
-  Scenario: User with bitcoin address tips page is accessible via user id
+  Scenario: User with emercoin address tips page is accessible via user id
     When  I browse to the explicit path "users/1/tips"
     Then  I should be on the "seldon user tips" page
     And   I should see "seldon tips"

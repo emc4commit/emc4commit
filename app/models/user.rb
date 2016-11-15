@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:github]
 
   # Validations
-  validates :bitcoin_address, bitcoin_address: true
+  validates :emercoin_address, emercoin_address: true
 
   # Associations
   has_many :tips
@@ -28,9 +28,9 @@ class User < ActiveRecord::Base
     attributes['denom'].presence || denom.presence
   end
 
-  def gravatar_bitcoin
+  def gravatar_emercoin
     begin
-      gravatar.get_value :currency, :bitcoin
+      gravatar.get_value :currency, :emercoin
     rescue URI::InvalidURIError, NoMethodError => e
       nil
     end
@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   end
 
   def ready_for_withdrawal?
-    self.bitcoin_address.present? && self.balance >= CONFIG["min_payout"]
+    self.emercoin_address.present? && self.balance >= CONFIG["min_payout"]
   end
 
   private

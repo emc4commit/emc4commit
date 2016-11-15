@@ -2,7 +2,7 @@
 <%
 # list local feature branches in their appropriate *_BRANCHES lists below
 MY_BRANCHES             = %w{master}
-TIP4COMMIT_BRANCHES     = %w{tip4commit-master tip4commit-new-feature}
+TIP4COMMIT_BRANCHES     = %w{emc4commit-master emc4commit-new-feature}
 PEER4COMMIT_BRANCHES    = %w{peer4commit-master peer4commit-new-feature}
 PRIME4COMMIT_BRANCHES   = %w{prime4commit-master peer4commit-new-feature}
 BRANCHES_LISTS_FILENAME = 'config/config.yml' # DEBUG
@@ -36,7 +36,7 @@ our_fee:    0.05
 
 deposit_address: 1M4bS4gPyA6Kb8w7aXsgth9oUZWcRk73tQ
 
-address_versions: # 0/5 for bitcoin addresses, 111/196 for testnet, see chainparams.cpp
+address_versions: # 0/5 for emercoin addresses, 111/196 for testnet, see chainparams.cpp
   - 0
   - 5
 
@@ -113,4 +113,4 @@ smtp_settings:
 # Uncomment to use airbrake/errbit
 # airbrake:
 #   api_key: 111111111111
-#   host:    errbit.tip4commit.com
+#   host:    errbit.emc4commit.com
