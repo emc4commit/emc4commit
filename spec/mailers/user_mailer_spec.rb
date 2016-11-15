@@ -16,7 +16,7 @@ describe UserMailer do
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eq ['no-reply@emc4commit.com']
+      expect(mail.from).to eq ['no-reply@emc4commit.coin.emergate.net']
     end
 
     it 'assigns user\'s display_name' do

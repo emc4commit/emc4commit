@@ -113,4 +113,4 @@ smtp_settings:
 # Uncomment to use airbrake/errbit
 # airbrake:
 #   api_key: 111111111111
-#   host:    errbit.emc4commit.com
+#   host:    errbit.emc4commit.coin.emergate.net

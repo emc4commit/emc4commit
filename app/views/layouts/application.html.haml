@@ -28,7 +28,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-1115214-16', 'emc4commit.com');
+      ga('create', 'UA-1115214-16', 'emc4commit.coin.emergate.net');
       ga('send', 'pageview');
     .container
       .masthead
@@ -70,7 +70,7 @@
             = link_to image_tag("flags/#{locale}.png"), "?locale=#{locale}", data: {no_turbolink: true}
         %p
           ©
-          = link_to t('emc4commit'), 'http://emc4commit.com/', target: '_blank'
+          = link_to t('emc4commit'), 'http://emc4commit.coin.emergate.net/', target: '_blank'
           2013-#{Date.today.year}.
-          = raw t('footer.text', github_link: link_to(t('footer.github_link'), 'https://github.com/emc4commit/emc4commit', target: '_blank'), support_link: link_to(t('footer.support_link'), 'http://emc4commit.com/projects/307'))
+          = raw t('footer.text', github_link: link_to(t('footer.github_link'), 'https://github.com/emc4commit/emc4commit', target: '_blank'), support_link: link_to(t('footer.support_link'), 'http://emc4commit.coin.emergate.net/projects/307'))
           = link_to t('footer.follow_link'), 'https://twitter.com/emc4commit', target: '_blank'

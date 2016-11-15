@@ -1,16 +1,15 @@
 Emc4commit
 ==========
 
-[![tip for next commit](https://emc4commit.com/projects/307.svg)](https://emc4commit.com/projects/307)
+[![tip for next commit](https://emc4commit.coin.emergate.net/projects/307.svg)](https://emc4commit.coin.emergate.net/projects/307)
 [![Build Status](https://travis-ci.org/emc4commit/emc4commit.svg?branch=master)](https://travis-ci.org/emc4commit/emc4commit)
 
 Donate emercoin to open source projects or receive tips for code contributions.
 
 Name | Link
 ----|----|
-Official site | https://emc4commit.com/
-Discussions | https://emercointalk.org/index.php?topic=31580
-FAQs | https://github.com/emc4commit/emc4commit/wiki/FAQ
+Official site | https://emc4commit.coin.emergate.net/
+Discussions | ???
 Issues | https://github.com/emc4commit/emc4commit/issues
 
 Installation

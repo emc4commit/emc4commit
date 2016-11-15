@@ -1,6 +1,6 @@
 require 'digest'
 
-class EmercoinAddressValidator < ActiveModel::EachValidator
+class BitcoinAddressValidator < ActiveModel::EachValidator
   def validate_each(record, field, value)
     unless value.blank? || valid_emercoin_address?(value)
       record.errors[field] << "Emercoin address is invalid"
